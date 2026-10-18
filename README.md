@@ -1,8 +1,14 @@
 # 奶龙理工学院 · 高校奶龙域名跳转页
 
+<p align="center">
+  <img src="https://count.getloli.com/@nailong-nyist-pages?name=nailong-nyist-pages&theme=random&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Moe Counter">
+</p>
+
+
 <p align="center" style="margin-top: 8px; font-size: 18px;">
   高校奶龙域名 · <a href="https://xn--yusy8b04co90bwi3bktl.com/">奶龙理工学院.com</a> · 南阳理工学院非官方趣味跳转页
 </p>
+
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
@@ -13,10 +19,12 @@
   <a href="https://github.com/GeorgeNaNN/nailong-nyist-pages/commits"><img src="https://img.shields.io/github/last-commit/GeorgeNaNN/nailong-nyist-pages" alt="Last Commit"></a>
 </p>
 
+
 <p align="center">
   <strong>Language / 语言</strong><br>
   <a href="README.md"><img src="https://img.shields.io/badge/中文-当前-blue" alt="中文"></a>
 </p>
+
 
 ---
 
@@ -106,4 +114,3 @@ python -m http.server 8792 --bind 127.0.0.1
 ### 手机端
 
 ![手机端页面示例](example_images/preview-mobile.png)
-
