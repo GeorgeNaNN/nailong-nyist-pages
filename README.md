@@ -4,11 +4,9 @@
   <img src="https://count.getloli.com/@nailong-nyist-pages?name=nailong-nyist-pages&theme=random&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Moe Counter">
 </p>
 
-
 <p align="center" style="margin-top: 8px; font-size: 18px;">
   高校奶龙域名 · <a href="https://xn--yusy8b04co90bwi3bktl.com/">奶龙理工学院.com</a> · 南阳理工学院非官方趣味跳转页
 </p>
-
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
@@ -19,12 +17,10 @@
   <a href="https://github.com/GeorgeNaNN/nailong-nyist-pages/commits"><img src="https://img.shields.io/github/last-commit/GeorgeNaNN/nailong-nyist-pages" alt="Last Commit"></a>
 </p>
 
-
 <p align="center">
   <strong>Language / 语言</strong><br>
   <a href="README.md"><img src="https://img.shields.io/badge/中文-当前-blue" alt="中文"></a>
 </p>
-
 
 ---
 
@@ -43,6 +39,8 @@
 > **手机端显示说明：** 当前手机端暂无法完整渲染炫彩字体效果，字体显示可能与电脑端不同，具体以所用浏览器和系统为准；不影响音频播放、倒计时和官网跳转功能。
 
 **非官方，仅整活分享。“奶龙理工学院”是趣味校名，本项目与南阳理工学院无官方关联。**
+
+页面使用的“奶龙捧腹大笑”音频下载自 [爱给网 · 奶龙音效](https://www.aigei.com/sound/class/nai_long_d/)。
 
 奶龙形象及相关音频、校徽等第三方素材的权利归各自权利人所有。素材仅用于非官方趣味展示，不表示获得相关权利人的授权或背书。
 
