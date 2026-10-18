@@ -40,7 +40,7 @@
 
 ## 二、项目信息
 
-- 作者：[George](https://github.com/GeorgeNaNN)
+- 作者：[GeorgeNaNN](https://github.com/GeorgeNaNN)
 - 版本：`2.0`
 - 项目名：`nailong-nyist-pages`
 - 项目定位：高校奶龙域名 / 南阳理工学院非官方趣味跳转页
