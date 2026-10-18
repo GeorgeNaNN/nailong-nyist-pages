@@ -56,6 +56,7 @@
 - 技术栈：`HTML` / `CSS` / `JavaScript`
 - 部署平台：`Cloudflare Pages`，也可使用支持根目录部署的静态网站托管服务
 - 参考项目：[Enderman112/nailong-university](https://github.com/Enderman112/nailong-university)
+- 作者QQ（有问题请联系作者）：3467842596
 
 ## 三、文件结构
 
