@@ -1,4 +1,4 @@
-# nailong-nyist-pages · 高校奶龙域名跳转页
+# 奶龙理工学院 · 高校奶龙域名跳转页
 
 <p align="center" style="margin-top: 8px; font-size: 18px;">
   高校奶龙域名 · <a href="https://xn--yusy8b04co90bwi3bktl.com/">奶龙理工学院.com</a> · 南阳理工学院非官方趣味跳转页
@@ -26,7 +26,7 @@
 
 访问 [奶龙理工学院.com](https://xn--yusy8b04co90bwi3bktl.com/) 后，会先展示奶龙主题页面，再跳转到南阳理工学院官网。这是在独立注册的趣味域名上制作跳转页，并非更改学校的官方校名或官网域名。
 
-项目使用原生 HTML、CSS 和 JavaScript 编写，可以直接部署到 Cloudflare Pages，无需自行购买服务器，也不需要数据库或构建工具。
+项目使用原生 HTML、CSS 和 JavaScript 编写，部署到了 Cloudflare Pages，无需自行购买服务器，也不需要数据库或构建工具。
 
 项目参考并基于 [Enderman112/nailong-university](https://github.com/Enderman112/nailong-university) 进行了魔改和个性化创作，结合南阳理工学院相关元素，加入了自己的排版、交互和视觉设计想法。感谢原项目提供的创意与实现参考。
 
