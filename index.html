@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c6eee9">
+<title>奶龙理工学院</title>
+<meta name="description" content="奶龙正在护送你前往奶龙理工学院，随后自动前往南阳理工学院官网。">
+<link rel="canonical" href="https://xn--yusy8b04co90bwi3bktl.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="奶龙理工学院">
+<meta property="og:description" content="奶龙正在护送你前往奶龙理工学院">
+<meta property="og:image" content="https://xn--yusy8b04co90bwi3bktl.com/ring-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preload" as="image" href="/ring.webp">
+<link rel="preload" as="image" href="/badge-emblem.webp">
+<link rel="preload" as="image" href="/badge-mascot.webp">
+<noscript><meta http-equiv="refresh" content="4;url=https://www.nyist.edu.cn/"></noscript>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #dce9eb;
+    --surface: #fffdf8;
+    --ink: #22282b;
+    --muted: #747c80;
+    --line: #e4e8e9;
+    --red: #c82332;
+    --red-soft: #f1d4d8;
+    --teal: #327b70;
+    --badge-size: min(340px, 70vw, 39svh);
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+    font-synthesis: none;
+    letter-spacing: 0;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  [hidden] { display: none !important; }
+  body { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; color: var(--ink); background: linear-gradient(118deg, #aee5e933 0%, #fff0cd66 36%, #ffc9d555 70%, #c0ddf355 100%), linear-gradient(155deg, #ade7df 0%, #c9edf4 29%, #f5eedb 52%, #f5cedc 76%, #c8e4f3 100%); position: relative; isolation: isolate; }
+  body::before { content: ""; position: fixed; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(124deg, transparent 14%, #ffffff40 25%, #ffffff09 37%, transparent 48%), linear-gradient(25deg, transparent 32%, #ffffff38 46%, transparent 64%), repeating-linear-gradient(115deg, #ffffff09 0 1px, transparent 1px 5px); }
+  button, input, a { -webkit-tap-highlight-color: transparent; }
+  button, input { font: inherit; }
+  a { color: inherit; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; }
+  .footer { width: min(1200px, calc(100% - 80px)); margin-inline: auto; display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
+  main { flex: 1; display: grid; place-items: center; padding: 28px 24px; }
+  .portal { display: flex; flex-direction: column; align-items: center; width: min(100%, 560px); text-align: center; }
+  .badge-wrap { padding: 12px; margin-bottom: 28px; }
+  .badge { position: relative; width: var(--badge-size); aspect-ratio: 1; isolation: isolate; }
+  .badge::before { content: ""; position: absolute; inset: 1%; border-radius: 50%; background: var(--surface); box-shadow: 0 16px 40px #493d3514; }
+  .ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: orbit 36s linear infinite; }
+  .progress { position: absolute; inset: -4%; width: 108%; height: 108%; transform: rotate(-90deg); overflow: visible; pointer-events: none; }
+  .progress circle { fill: none; stroke-width: 1.05; }
+  .track { stroke: #e5d2cf; }
+  .bar { stroke: var(--red); stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; }
+  .badge-center { position: absolute; inset: 17%; border-radius: 50%; overflow: hidden; background: var(--surface); }
+  .emblem { position: absolute; width: 76%; height: 83%; object-fit: contain; left: 5%; top: 4%; }
+  .mascot { position: absolute; width: 64%; height: 84%; right: -3%; bottom: -7%; filter: drop-shadow(-3px 2px 2px #ffffffc9); padding: 0; border: 0; background: none; border-radius: 45%; touch-action: manipulation; }
+  .mascot img { display: block; width: 100%; height: 100%; object-fit: contain; transform-origin: 50% 65%; transition: transform .22s ease; }
+  .mascot:focus-visible { outline-offset: -6px; }
+  .mascot:focus-visible:not(.clicked) img { transform: scale(1.12); }
+  .mascot.clicked img { animation: mascot-click .46s ease-out; }
+  @media (hover: hover) and (pointer: fine) {
+    .mascot:hover:not(.clicked) img { transform: scale(1.12); }
+    .mascot:hover { --mascot-start-scale: 1.12; }
+  }
+  .speech { position: absolute; z-index: 2; left: 74%; top: 18%; width: 104px; height: 66px; display: grid; place-items: center; padding: 0 0 2px; border: 1px solid #ffffffd9; border-radius: 50%; background: linear-gradient(180deg, #ffffff52, transparent 55%), linear-gradient(135deg, #bcf9ef 0%, #c5eaff 37%, #ffcddd 72%, #ffe8ae 100%); color: #613a59; font-family: "YouYuan", "幼圆", "STHupo", "华文琥珀", sans-serif; font-size: 26px; font-weight: 800; text-shadow: 0 1px 0 #ffffffd9; box-shadow: inset 0 2px 6px #ffffff66, inset 0 -4px 7px #c681af29, 0 5px 13px #80566f21; transform: rotate(8deg); transition: box-shadow .2s; pointer-events: none; }
+  .speech::before { content: ""; position: absolute; left: 8px; bottom: -11px; width: 20px; height: 17px; background: linear-gradient(135deg, #c5eaff, #eddaee); clip-path: polygon(22% 0, 100% 0, 0 100%); }
+  .speech-text { font-family: "STHupo", "华文琥珀", "YouYuan", "幼圆", sans-serif; font-size: 30px; font-weight: 900; line-height: 1.4; background: linear-gradient(180deg, #ffffff99 0%, transparent 24%, transparent 40%, #ffffff88 48%, #0000001a 54%, transparent 66%, #ffffff55 100%), linear-gradient(115deg, #f367aa 0%, #ffa45d 18%, #f4d34c 33%, #59ce91 48%, #32c9d0 63%, #548cf1 82%, #b07bdd 100%); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-stroke: .7px #fffafc; paint-order: stroke fill; text-shadow: none; filter: drop-shadow(0 2px 0 #607b91) drop-shadow(0 3px 2px #52687b33); }
+  .sound-playing .speech { box-shadow: inset 0 2px 6px #ffffff66, inset 0 -4px 7px #c681af29, 0 0 0 4px #ffffff66, 0 5px 16px #80566f33; }
+  .audio-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .eyebrow { color: var(--teal); font-size: 11px; font-weight: 600; line-height: 1.7; margin-bottom: 10px; }
+  h1 { font-size: 40px; font-weight: 750; line-height: 1.4; }
+  .subtitle { margin-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.8; text-wrap: balance; }
+  .subtitle strong { color: var(--ink); font-weight: 700; }
+  .loading-dots { display: inline-flex; align-items: center; gap: 5px; height: 1em; margin-left: 9px; vertical-align: middle; white-space: nowrap; }
+  .loading-dots i { --dot-light: #ffb9c7; --dot-dark: #e4718d; display: block; flex: 0 0 8px; width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle at 30% 24%, #ffffffed 0%, #ffffff80 16%, transparent 44%), linear-gradient(145deg, var(--dot-light), var(--dot-dark)); box-shadow: inset .4px .6px 1px #ffffff99, inset -.4px -.7px 1px #00000012, 0 1px 2px #743b4b1a; transform-origin: 50% 85%; animation: escort-bounce 1s cubic-bezier(.45, 0, .3, 1) infinite, escort-size 1s cubic-bezier(.45, 0, .3, 1) infinite both; }
+  .loading-dots i:nth-child(2) { --dot-light: #ffe8ac; --dot-dark: #ddb05a; animation-delay: .16s; }
+  .loading-dots i:nth-child(3) { --dot-light: #b7eee4; --dot-dark: #60b4a8; animation-delay: .32s; }
+  .auto { display: flex; width: fit-content; margin: 18px auto 0; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; cursor: pointer; }
+  .auto input { appearance: none; width: 26px; height: 16px; flex-shrink: 0; border: 1px solid #b7c0c2; border-radius: 20px; background: #b7c0c2; position: relative; cursor: pointer; transition: background .2s; }
+  .auto input::after { content: ""; position: absolute; width: 10px; height: 10px; top: 2px; left: 2px; border-radius: 50%; background: white; transition: transform .2s; }
+  .auto input:checked { border-color: var(--teal); background: var(--teal); }
+  .auto input:checked::after { transform: translateX(10px); }
+  .footer { min-height: 88px; color: var(--muted); font-size: 11px; line-height: 1.8; position: relative; }
+  .spirit { position: relative; display: flex; justify-content: center; align-items: center; gap: 7px; margin: 0 0 24px; padding: 0 10px 12px; color: #bf3446; font-family: "STXingkai", "华文行楷", "KaiTi", "楷体", serif; font-size: 76px; font-weight: 400; line-height: 1.14; white-space: nowrap; -webkit-text-stroke: 1.5px #fff8eb; paint-order: stroke fill; text-shadow: 0 2px 0 #fff8eb, 1px 4px 0 #a73b4826; }
+  .spirit span { display: inline-block; }
+  .spirit span:nth-child(1) { transform: rotate(-7deg) translateY(2px); }
+  .spirit span:nth-child(2) { transform: rotate(3deg) translateY(-2px); }
+  .spirit span:nth-child(3) { transform: rotate(-4deg) translateY(2px); }
+  .spirit span:nth-child(4) { transform: rotate(5deg) translateY(-3px); }
+  .spirit::after { content: ""; position: absolute; bottom: 1px; left: 16%; width: 68%; height: 5px; border-radius: 50%; background: linear-gradient(90deg, transparent, #da83966b 22%, #e4b98099 70%, transparent); transform: rotate(-3deg); }
+  .motto { --motto-dot-size: 12px; display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; color: #327b70; font-family: "STHupo", "华文琥珀", "YouYuan", "幼圆", "Comic Sans MS", sans-serif; font-size: 36px; line-height: 1.5; text-align: center; text-shadow: 0 1px #fff9; white-space: nowrap; }
+  .motto span { flex: 1; position: relative; }
+  .motto span + span::before { content: ""; position: absolute; left: -6px; top: 50%; width: var(--motto-dot-size); height: var(--motto-dot-size); border-radius: 50%; background: currentColor; transform: translate(-50%, -50%); }
+  .motto::before, .motto::after { content: "✦"; color: var(--red); font-size: 25px; }
+  .footer button { color: inherit; border: 0; background: none; font-size: 11px; padding: 10px 0 10px 16px; }
+  .footer button:hover { color: var(--red); }
+  .about { width: min(400px, calc(100% - 40px)); max-height: calc(100svh - 40px); margin: auto; padding: 30px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--surface); box-shadow: 0 24px 80px #22282b26; }
+  .about::backdrop { background: #22282b66; backdrop-filter: blur(4px); }
+  .about h2 { font-size: 20px; margin-bottom: 18px; }
+  .about p { color: #5d666a; font-size: 13px; line-height: 1.9; overflow-wrap: anywhere; }
+  .about p + p { margin-top: 10px; }
+  .about form { margin-top: 24px; text-align: right; }
+  .about button { padding: 9px 18px; background: var(--red); color: white; border: 0; border-radius: 4px; font-size: 13px; }
+  .transition-screen { position: fixed; z-index: 10; inset: 0; background: var(--red); color: white; display: grid; place-items: center; pointer-events: none; visibility: hidden; clip-path: circle(0px at var(--exit-x, 50%) var(--exit-y, 40%)); transition: clip-path .72s cubic-bezier(.65, 0, .25, 1); }
+  .transition-content { text-align: center; padding: 24px; opacity: 0; transform: translateY(12px); transition: opacity .26s .38s, transform .4s .38s; }
+  .transition-content img { display: block; width: min(180px, 60vw, 60svh); height: auto; aspect-ratio: 182 / 198; object-fit: contain; filter: brightness(0) invert(1); }
+  .leaving .transition-screen { visibility: visible; pointer-events: auto; clip-path: circle(var(--exit-radius, 150vmax) at var(--exit-x, 50%) var(--exit-y, 40%)); }
+  .leaving .transition-content { opacity: 1; transform: none; }
+  .paused .ring { animation-play-state: running; }
+  .entering .badge-wrap { animation: arrive .8s cubic-bezier(.2, .65, .3, 1) both; }
+  .entering .copy, .entering .spirit, .entering .motto, .entering .auto { animation: arrive .7s .1s both; }
+  @keyframes orbit { to { transform: rotate(1turn); } }
+  @keyframes escort-bounce {
+    0%, 52%, 100% { transform: translateY(0) scale(1); }
+    10% { transform: translateY(.4px) scale(1.12, .88); }
+    27% { transform: translateY(-4.5px) scale(.94, 1.06); }
+    40% { transform: translateY(.3px) scale(1.1, .9); }
+  }
+  @keyframes escort-size {
+    0%, 100% { scale: .85; }
+    10% { scale: 1; }
+    27% { scale: 1.25; }
+    40% { scale: .82; }
+    52% { scale: .65; }
+  }
+  @keyframes mascot-click {
+    0% { transform: scale(var(--mascot-start-scale, 1)); }
+    38% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+  @keyframes arrive { from { opacity: 0; transform: translateY(14px) scale(.97); } }
+  @media (max-width: 640px) {
+    .footer { width: calc(100% - 40px); gap: 12px; }
+    main { padding: 28px 24px; }
+    .badge-wrap { margin-bottom: 26px; }
+    h1 { font-size: 32px; }
+    .subtitle { font-size: 12px; }
+    .eyebrow { font-size: 9px; }
+    .auto { margin-top: 15px; }
+    .footer { min-height: 92px; font-size: 10px; }
+    .spirit { font-size: 52px; gap: 5px; margin-bottom: 20px; padding-bottom: 10px; }
+    .motto { --motto-dot-size: 9px; font-size: 24px; gap: 8px; }
+    .motto span + span::before { left: -4px; }
+  }
+  @media (max-height: 700px) {
+    :root { --badge-size: min(210px, 60vw, 28svh); }
+    main { padding-block: 28px; }
+    .badge-wrap { margin-bottom: 12px; }
+    .spirit { font-size: 56px; margin-bottom: 16px; }
+    h1 { font-size: 28px; }
+    .subtitle { margin-top: 6px; }
+    .auto { margin-top: 10px; }
+    .footer { min-height: 72px; }
+  }
+  @media (max-height: 600px) {
+    :root { --badge-size: min(156px, 52vw, 24svh); }
+    main { padding-block: 10px; }
+    .badge-wrap { padding: 8px; margin-bottom: 8px; }
+    .spirit { font-size: 44px; gap: 4px; margin-bottom: 12px; padding-bottom: 8px; }
+    h1 { font-size: 25px; }
+    .subtitle { margin-top: 3px; line-height: 1.5; }
+    .eyebrow { margin-bottom: 4px; }
+    .auto { margin-top: 7px; }
+    .footer { min-height: 62px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="portal">
+    <div class="badge-wrap">
+      <div class="badge" role="group" aria-label="红色南阳理工学院文字圆环，中央校徽前叠着红色奶龙；外圈表示自动跳转进度">
+        <img class="ring" src="/ring.webp" alt="" width="720" height="720">
+        <div class="badge-center">
+          <img class="emblem" src="/badge-emblem.webp" alt="" width="182" height="198">
+          <button class="mascot" id="mascot-btn" type="button" aria-label="奶龙：点我播放捧腹大笑"><img src="/badge-mascot.webp" alt="红色奶龙" width="934" height="1124"></button>
+        </div>
+        <span class="speech" aria-hidden="true"><span class="speech-text">点我</span></span>
+        <svg class="progress" viewBox="0 0 100 100" role="progressbar" aria-label="自动跳转进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><circle class="track" cx="50" cy="50" r="49"/><circle class="bar" cx="50" cy="50" r="49" pathLength="100"/></svg>
+      </div>
+    </div>
+    <p class="spirit" aria-label="不甘示弱"><span>不</span><span>甘</span><span>示</span><span>弱</span></p>
+    <p class="motto" aria-label="厚德、博学、求真、至善"><span>厚德</span><span>博学</span><span>求真</span><span>至善</span></p>
+    <div class="copy">
+      <p class="eyebrow">Nailong Institute of Technology</p>
+      <h1>奶龙理工学院</h1>
+      <p class="subtitle">奶龙正在护送你前往 <strong>南阳理工学院</strong><span class="loading-dots" aria-hidden="true"><i></i><i></i><i></i></span></p>
+    </div>
+    <label class="auto" hidden><input id="auto" type="checkbox" checked><span>自动跳转</span></label>
+  </div>
+</main>
+<audio id="laugh" src="./奶龙捧腹大笑.mp3" preload="metadata"></audio>
+<p class="audio-status" id="audio-status" role="status"></p>
+<footer class="footer">
+  <button id="about-btn" type="button" hidden>关于本站</button>
+</footer>
+<dialog class="about" id="about" aria-labelledby="about-title">
+  <h2 id="about-title">关于本站</h2>
+  <p>非官方，仅整活分享。“奶龙理工学院”是趣味校名，与南阳理工学院无官方关联。</p>
+  <p>跳转目标为南阳理工学院官网：<a href="https://www.nyist.edu.cn/">www.nyist.edu.cn</a>。校徽取自学校公开标识，奶龙为趣味创作素材。</p>
+  <p>页面源码：<a href="https://github.com/GeorgeNaNN/nailong-nyist-pages" target="_blank" rel="noopener noreferrer">GeorgeNaNN/nailong-nyist-pages</a></p>
+  <form method="dialog"><button>关闭</button></form>
+</dialog>
+<div class="transition-screen" aria-hidden="true">
+  <div class="transition-content"><img src="/badge-emblem.webp" alt="" width="182" height="198"></div>
+</div>
+<script>
+(() => {
+  const TARGET = 'https://www.nyist.edu.cn/';
+  const stay = new URLSearchParams(location.search).has('stay');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DELAY = 3600;
+  const EXIT = reduce ? 80 : 900;
+  const body = document.body;
+  const bar = document.querySelector('.bar');
+  const auto = document.getElementById('auto');
+  const about = document.getElementById('about');
+  const aboutBtn = document.getElementById('about-btn');
+  const laugh = document.getElementById('laugh');
+  const audioStatus = document.getElementById('audio-status');
+  const mascot = document.getElementById('mascot-btn');
+  let elapsed = 0, last = null, raf, leaving = false, exitTimer;
+  let soundActive = false, playRequest = 0;
+  const paused = () => !auto.checked || about.open || document.hidden || soundActive;
+
+  function setSoundActive(active) {
+    soundActive = active;
+    body.classList.toggle('sound-playing', active);
+    last = null;
+    paint();
+  }
+  async function playLaugh() {
+    if (leaving) return;
+    mascot.classList.remove('clicked');
+    void mascot.offsetWidth;
+    mascot.classList.add('clicked');
+    const request = ++playRequest;
+    setSoundActive(true);
+    try {
+      laugh.currentTime = 0;
+      await laugh.play();
+      if (request === playRequest) audioStatus.textContent = '奶龙正在捧腹大笑';
+    } catch {
+      if (request === playRequest) {
+        setSoundActive(false);
+        audioStatus.textContent = '音频暂时无法播放，请再点一次奶龙';
+      }
+    }
+  }
+  mascot.addEventListener('click', playLaugh);
+  mascot.addEventListener('pointerleave', () => mascot.classList.remove('clicked'));
+  mascot.addEventListener('blur', () => mascot.classList.remove('clicked'));
+  laugh.addEventListener('ended', () => { setSoundActive(false); audioStatus.textContent = ''; });
+  laugh.addEventListener('pause', () => { if (laugh.paused) setSoundActive(false); });
+  laugh.addEventListener('error', () => { setSoundActive(false); audioStatus.textContent = '音频暂时无法播放，请再点一次奶龙'; });
+
+  function paint() {
+    const ratio = Math.min(1, elapsed / DELAY);
+    bar.style.strokeDashoffset = 100 * (1 - ratio);
+    bar.setAttribute('aria-valuenow', Math.round(ratio * 100));
+    body.classList.toggle('paused', paused());
+  }
+  function tick(now) {
+    if (!paused() && last !== null) elapsed += now - last;
+    last = now;
+    paint();
+    if (elapsed >= DELAY) leave();
+    else raf = requestAnimationFrame(tick);
+  }
+  function start() {
+    clearTimeout(exitTimer);
+    cancelAnimationFrame(raf);
+    elapsed = 0;
+    last = null;
+    leaving = false;
+    body.classList.remove('leaving', 'entering');
+    void body.offsetWidth;
+    body.classList.add('entering');
+    paint();
+    raf = requestAnimationFrame(tick);
+  }
+  function leave() {
+    if (leaving) return;
+    leaving = true;
+    elapsed = DELAY;
+    cancelAnimationFrame(raf);
+    const rect = document.querySelector('.badge').getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y)) + 20;
+    body.style.setProperty('--exit-x', `${x}px`);
+    body.style.setProperty('--exit-y', `${y}px`);
+    body.style.setProperty('--exit-radius', `${radius}px`);
+    body.classList.add('leaving');
+    paint();
+    exitTimer = setTimeout(stay ? start : () => location.replace(TARGET), stay ? EXIT + 650 : EXIT);
+  }
+  auto.addEventListener('change', () => { last = null; paint(); });
+  aboutBtn.addEventListener('click', () => {
+    if (!leaving) { about.showModal(); last = null; paint(); }
+  });
+  about.addEventListener('close', () => { last = null; paint(); });
+  about.addEventListener('click', e => {
+    const rect = about.getBoundingClientRect();
+    if (e.target === about && (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)) about.close();
+  });
+  document.addEventListener('visibilitychange', () => { last = null; paint(); });
+  addEventListener('pageshow', e => { if (e.persisted) start(); });
+  aboutBtn.hidden = false;
+  auto.parentElement.hidden = false;
+  // Start after the layered artwork is ready, with a bounded wait for slow connections.
+  Promise.race([
+    Promise.all([...document.images].map(img => img.decode().catch(() => {}))),
+    new Promise(resolve => setTimeout(resolve, 1500))
+  ]).then(() => { if (!leaving) start(); });
+})();
+</script>
+</body>
+</html>
