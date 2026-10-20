@@ -20,6 +20,7 @@
 <link rel="preload" as="image" href="/badge-emblem.webp">
 <link rel="preload" as="image" href="/badge-mascot.webp">
 <noscript><meta http-equiv="refresh" content="4;url=https://www.nyist.edu.cn/"></noscript>
+<script>document.documentElement.classList.add('intro-pending');</script>
 <style>
   :root {
     color-scheme: light;
@@ -112,8 +113,9 @@
   .leaving .transition-screen { visibility: visible; pointer-events: auto; clip-path: circle(var(--exit-radius, 150vmax) at var(--exit-x, 50%) var(--exit-y, 40%)); }
   .leaving .transition-content { opacity: 1; transform: none; }
   .paused .ring { animation-play-state: running; }
-  .entering .badge-wrap { animation: arrive .8s cubic-bezier(.2, .65, .3, 1) both; }
-  .entering .copy, .entering .spirit, .entering .motto, .entering .auto { animation: arrive .7s .1s both; }
+  .intro-pending :is(.badge-wrap, .copy, .spirit, .motto, .auto) { opacity: 0; }
+  .entering .badge-wrap { animation: intro-pop .7s cubic-bezier(.34, 1.56, .64, 1) backwards; }
+  .entering .copy, .entering .spirit, .entering .motto, .entering .auto { animation: intro-rise .5s ease-out .15s backwards; }
   @keyframes orbit { to { transform: rotate(1turn); } }
   @keyframes escort-bounce {
     0%, 52%, 100% { transform: translateY(0) scale(1); }
@@ -133,7 +135,8 @@
     38% { transform: scale(1.25); }
     100% { transform: scale(1); }
   }
-  @keyframes arrive { from { opacity: 0; transform: translateY(14px) scale(.97); } }
+  @keyframes intro-pop { from { transform: scale(.55) rotate(-25deg); opacity: 0; } }
+  @keyframes intro-rise { from { opacity: 0; transform: translateY(10px); } }
   @media (max-width: 640px) {
     .footer { width: calc(100% - 40px); gap: 12px; }
     main { padding: 28px 24px; }
@@ -284,6 +287,7 @@
     body.classList.remove('leaving', 'entering');
     void body.offsetWidth;
     body.classList.add('entering');
+    document.documentElement.classList.remove('intro-pending');
     paint();
     raf = requestAnimationFrame(tick);
   }
