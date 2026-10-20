@@ -4,9 +4,11 @@
   <img src="https://count.getloli.com/@nailong-nyist-pages?name=nailong-nyist-pages&theme=random&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" alt="Moe Counter">
 </p>
 
+
 <p align="center" style="margin-top: 8px; font-size: 18px;">
   高校奶龙域名 · <a href="https://xn--yusy8b04co90bwi3bktl.com/">奶龙理工学院.com</a> · 南阳理工学院非官方趣味跳转页
 </p>
+
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
@@ -17,10 +19,12 @@
   <a href="https://github.com/GeorgeNaNN/nailong-nyist-pages/commits"><img src="https://img.shields.io/github/last-commit/GeorgeNaNN/nailong-nyist-pages" alt="Last Commit"></a>
 </p>
 
+
 <p align="center">
   <strong>Language / 语言</strong><br>
   <a href="README.md"><img src="https://img.shields.io/badge/中文-当前-blue" alt="中文"></a>
 </p>
+
 
 ---
 
@@ -35,6 +39,8 @@
 项目参考并基于 [Enderman112/nailong-university](https://github.com/Enderman112/nailong-university) 进行了魔改和个性化创作，结合南阳理工学院相关元素，加入了自己的排版、交互和视觉设计想法。感谢原项目提供的创意与实现参考。
 
 页面以红色旋转圆环、分层校徽和红色奶龙为主体，搭配果冻色渐变背景、五彩“点我”气泡、手写风格的“不甘示弱”和“厚德 · 博学 · 求真 · 至善”校训，并加入奶龙点击音频和倒计时暂停控制。圆环倒计时结束后，通过校徽转场前往 [南阳理工学院官网](https://www.nyist.edu.cn/)。
+
+页面加载时，圆环、校徽与奶龙由小到大弹出，文字稍后淡入上移，形成轻快的入场效果。
 
 > **手机端显示说明：** 当前手机端可能无法完整渲染炫彩字体效果，字体显示可能与电脑端不同，具体以所用浏览器和系统为准；不影响音频播放、倒计时和官网跳转功能。
 
